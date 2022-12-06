@@ -104,7 +104,6 @@ class TkinterVideo(tk.Label):
 
             video_stream = self._container.streams.video[0]
             self.audio_stream = self._container.streams.get(audio=0)[0]
-            sd.play(self.audio_stream, 44100)
 
             try:
                 self._video_info["framerate"] = int(video_stream.average_rate)
