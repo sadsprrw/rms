@@ -103,7 +103,6 @@ class TkinterVideo(tk.Label):
             self._container.discard_corrupt = True
 
             video_stream = self._container.streams.video[0]
-            self.audio_stream = self._container.streams.get(audio=0)[0]
 
             try:
                 self._video_info["framerate"] = int(video_stream.average_rate)
@@ -124,7 +123,6 @@ class TkinterVideo(tk.Label):
             self._set_frame_size()
 
             self.stream_base = video_stream.time_base
-            self.audio_stream_base = self.audio_stream.time_base
 
             try:
                 self.event_generate("<<Loaded>>")
