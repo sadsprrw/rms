@@ -6,6 +6,7 @@ import tkinter as tk
 from PIL import ImageTk, Image, ImageOps
 from typing import Tuple, Dict
 import sounddevice as sd
+import soundfile as sf
 
 logging.getLogger('libav').setLevel(logging.ERROR)
 
@@ -246,7 +247,5 @@ class TkinterVideo(tk.Label):
         self.config(image=self.current_imgtk)
 
     def seek(self, sec: int):
-        """ seeks to specific time"""
-
         self._seek = True
         self._seek_sec = sec
